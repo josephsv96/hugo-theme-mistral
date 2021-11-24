@@ -56,14 +56,14 @@ Add the following lines to your `config.toml` to set site parameters. See [Conte
     weight = 2
 
   [[menu.footer]]
-        name = "Github"
-        url = "https://github.com/example"
-        weight = 1
+    name = "Github"
+    url = "https://github.com/example"
+    weight = 1
 
   [[menu.footer]]
-      name = "Imprint"
-      url = "/imprint"
-      weight = 2
+    name = "Imprint"
+    url = "/imprint"
+    weight = 2
 ```
 
 Start hugo server in production mode:
