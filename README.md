@@ -36,7 +36,7 @@ git submodule foreach git pull
 Set the theme option to `Mistral` in the `config.toml` file of your Hugo site.
 
 ```toml
-theme = "Mistral"
+theme = "mistral"
 ```
 
 Add the following lines to your `config.toml` to set site parameters. See [Content Management - Menus](https://gohugo.io/content-management/menus/#add-non-content-entries-to-a-menu).
