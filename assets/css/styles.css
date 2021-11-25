@@ -29,7 +29,7 @@ nav {
 }
 
 .container {
-  @apply max-w-screen-md m-auto px-4 flex;
+  @apply max-w-screen-md m-auto px-4 md:px-0 flex;
 }
 
 footer {
