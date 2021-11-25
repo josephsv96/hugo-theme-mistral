@@ -1,5 +1,14 @@
 <header class="header">
+  <div class="logo-container">
+    <a class="logo" href="{{ .Site.BaseURL }}"> {{.Site.Title}} </a>
+  </div>
   {{ if len $.Site.Menus }}
-    {{ partial "menu.html" . }}
+  <nav>
+    {{ range.Site.Menus.main }}
+    <a class="nav-link" href="{{ .URL }}" title="{{.Name}}">
+      {{.Pre}}{{.Name}}{{.Post}}
+    </a>
+    {{ end }}
+  </nav>
   {{ end }}
 </header>

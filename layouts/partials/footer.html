@@ -1,12 +1,27 @@
-<footer class="bg-gray-900">
-	<div class="flex justify-center text-white py-1">
-		{{ if $.Site.Copyright }}
-			<div class="copyright copyright--user">
-				<span>{{ $.Site.Copyright | safeHTML }}</span>
-		{{ else }}
-			<div class="copyright">
-				<span>© {{ now.Year }} {{ .Site.Title }}</span>
-	  	{{ end }}
-			</div>
-	</div>
+<footer>
+  <div class="footer-item">
+    <span>© {{ now.Year }} {{ .Site.Title }}</span>
+  </div>
+  <div class="footer-item">
+    <span>
+      Powered by
+      <a
+        class="link"
+        href="https://gohugo.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Hugo
+      </a>
+      &
+      <a
+        class="link"
+        href="https://github.com/josephsv96/hugo-theme-mistral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        mistral theme
+      </a>
+    </span>
+  </div>
 </footer>
