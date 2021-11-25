@@ -9,24 +9,19 @@ body {
 }
 
 header {
-  display: flex;
-  width: 768px;
-  align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  @apply md:flex md:items-center max-w-screen-md pt-8 pb-4;
 }
 
 .logo-container {
-  display: flex;
-  flex: 1;
+  @apply flex flex-1;
 }
 
 .logo {
-  font-weight: 700;
+  @apply font-bold;
 }
 
 nav {
-  display: flex;
+  @apply flex;
 }
 
 .nav-link {
@@ -34,20 +29,11 @@ nav {
 }
 
 .container {
-  display: flex;
-  max-width: 768px;
-  margin: auto;
+  @apply flex max-w-screen-md m-auto;
 }
 
 footer {
-  display: flex;
-  width: 768px;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  font-size: small;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  @apply flex max-w-screen-md items-center justify-center text-sm py-4;
 }
 .footer-item {
   @apply mx-2;
