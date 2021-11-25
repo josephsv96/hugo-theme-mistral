@@ -29,7 +29,7 @@ nav {
 }
 
 .container {
-  @apply flex max-w-screen-md m-auto;
+  @apply max-w-screen-md m-auto px-4 flex;
 }
 
 footer {
@@ -42,36 +42,6 @@ footer {
 .link {
   @apply underline;
 }
-
-/*
-
-.content {
-  margin-bottom: 2rem;
-}
-
-.navbar {
-  @apply relative select-none md:flex md:items-stretch min-w-full;
-}
-
-.navbar-title-div {
-  @apply flex-none;
-}
-
-.navbar-title {
-  @apply font-bold hover:underline;
-}
-
-.navbar-nav-div {
-  @apply flex-1;
-}
-
-.navbar-nav {
-  @apply md:flex md:items-stretch md:justify-end ml-auto;
-}
-
-.navbar-nav-item {
-  @apply md:ml-2 hover:underline;
-} */
 
 .py-05 {
   padding-top: 0.125rem;
