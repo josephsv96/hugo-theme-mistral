@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  @apply md:flex md:items-center max-w-screen-md pt-8 pb-4;
+  @apply max-w-screen-md pt-8 pb-4 flex flex-col items-center md:flex-row;
 }
 
 .logo-container {
@@ -33,7 +33,7 @@ nav {
 }
 
 footer {
-  @apply flex max-w-screen-md items-center justify-center text-sm py-4;
+  @apply max-w-screen-md py-4 text-sm flex flex-col items-center justify-center md:flex-row;
 }
 .footer-item {
   @apply mx-2;
