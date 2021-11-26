@@ -2,14 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* MARKDOWN: https://github.com/iandinwoodie/github-markdown-tailwindcss */
-
 body {
-  @apply text-gray-700 text-lg font-mono leading-6 max-w-3xl m-auto;
+  @apply text-gray-700 text-lg font-mono leading-6;
+}
+
+.container {
+  @apply max-w-3xl m-auto p-5 md:p-10 flex flex-col;
 }
 
 header {
-  @apply max-w-screen-md pt-8 pb-4 flex flex-col items-center md:flex-row;
+  @apply pb-10 flex flex-col items-center md:flex-row;
 }
 
 .logo-container {
@@ -28,13 +30,10 @@ nav {
   @apply hover:underline mx-2;
 }
 
-.container {
-  @apply max-w-screen-md m-auto px-4 md:px-0 flex;
+footer {
+  @apply pt-10 text-sm items-center justify-center flex flex-col md:flex-row;
 }
 
-footer {
-  @apply max-w-screen-md py-4 text-sm flex flex-col items-center justify-center md:flex-row;
-}
 .footer-item {
   @apply mx-2;
 }
@@ -43,13 +42,13 @@ footer {
   @apply underline;
 }
 
+.content {
+  @apply flex flex-col text-base leading-normal break-words;
+}
+
 .py-05 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
-}
-
-.content {
-  @apply text-base leading-normal break-words w-full;
 }
 
 .content > * + * {
