@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  @apply pb-10 flex flex-col items-center md:flex-row;
+  @apply pb-10 flex flex-row items-center;
 }
 
 .logo-container {
@@ -23,12 +23,70 @@ header {
 }
 
 nav {
-  @apply flex;
+  @apply hidden md:flex;
 }
 
 .nav-link {
   @apply hover:underline mx-2;
 }
+
+.hamburger {
+  @apply block cursor-pointer md:hidden;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  @apply relative inline-block md:hidden;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content {
+  display: block;
+} */
+.dropdown:focus .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+} */
 
 footer {
   @apply pt-10 text-sm items-center justify-center flex flex-col md:flex-row;

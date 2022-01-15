@@ -1,14 +1,26 @@
 <header class="header">
   <div class="logo-container">
-    <a class="logo" href="{{ .Site.BaseURL }}"> {{.Site.Title}} </a>
+    <a class="logo" href="{{ .Site.BaseURL }}"> {{ .Site.Title }} </a>
   </div>
   {{ if len $.Site.Menus }}
-  <nav>
-    {{ range.Site.Menus.main }}
-    <a class="nav-link" href="{{ .URL }}" title="{{.Name}}">
-      {{.Pre}}{{.Name}}{{.Post}}
-    </a>
-    {{ end }}
-  </nav>
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content">
+        {{ range.Site.Menus.main }}
+          <a href="{{ .URL }}" title="{{ .Name }}">
+            {{ .Pre }}{{ .Name }}{{ .Post }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+  {{ if len $.Site.Menus }}
+    <nav>
+      {{ range.Site.Menus.main }}
+        <a class="nav-link" href="{{ .URL }}" title="{{ .Name }}">
+          {{ .Pre }}{{ .Name }}{{ .Post }}
+        </a>
+      {{ end }}
+    </nav>
   {{ end }}
 </header>
