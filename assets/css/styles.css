@@ -23,6 +23,10 @@ header {
 }
 
 nav {
+  @apply flex flex-row;
+}
+
+.nav-list {
   @apply hidden md:flex;
 }
 
@@ -30,8 +34,24 @@ nav {
   @apply hover:underline mx-2;
 }
 
-.hamburger {
-  @apply block cursor-pointer md:hidden;
+.hamburger-menu {
+  @apply md:hidden;
+}
+.hamburger-btn {
+  @apply p-3 focus:outline-none md:hidden;
+}
+.hamburger-x {
+  @apply w-6 h-6 hidden;
+}
+.hamburger-burger {
+  @apply w-6 h-6;
+}
+
+.hamburger-btn-close-side-menu {
+  @apply -translate-y-full mt-12 shadow;
+}
+.hamburger-btn-close {
+  @apply hidden;
 }
 
 .bar {
@@ -46,6 +66,11 @@ nav {
 
 /* Dropdown Button */
 .dropbtn {
+  border: none;
+}
+
+/* Dropdown Button 2*/
+.dropbtn2 {
   border: none;
 }
 

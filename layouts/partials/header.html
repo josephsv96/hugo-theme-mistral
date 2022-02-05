@@ -2,7 +2,7 @@
   <div class="logo-container">
     <a class="logo" href="{{ .Site.BaseURL }}"> {{ .Site.Title }} </a>
   </div>
-  {{ if len $.Site.Menus }}
+  <!-- {{ if len $.Site.Menus }}
     <div class="dropdown">
       <button class="dropbtn">Menu</button>
       <div class="dropdown-content">
@@ -13,14 +13,91 @@
         {{ end }}
       </div>
     </div>
-  {{ end }}
+  {{ end }} -->
   {{ if len $.Site.Menus }}
     <nav>
-      {{ range.Site.Menus.main }}
-        <a class="nav-link" href="{{ .URL }}" title="{{ .Name }}">
-          {{ .Pre }}{{ .Name }}{{ .Post }}
-        </a>
-      {{ end }}
+      <div class="hamburger-menu">
+        <button
+          id="mobileMenuButton"
+          class="hamburger-btn"
+          title="Open side menu"
+        >
+          <!-- SVG For "x" button -->
+          <svg
+            id="mobileMenuButtonClose"
+            class="hamburger-x"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+          <!-- SVG For "Menu burger" button -->
+          <svg
+            id="mobileMenuButtonOpen"
+            class="hamburger-burger"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <div id="sideMenuHideOnMobile" class="nav-list">
+        {{ range.Site.Menus.main }}
+          <a class="nav-link" href="{{ .URL }}" title="{{ .Name }}">
+            {{ .Pre }}{{ .Name }}{{ .Post }}
+          </a>
+        {{ end }}
+      </div>
     </nav>
+    <script>
+      var mobileMenuButton = document.getElementById("mobileMenuButton");
+      mobileMenuButton.onclick = function () {
+        document
+          .getElementById("sideMenuHideOnMobile")
+          .classList.toggle("hamburger-btn-close-side-menu");
+        document
+          .getElementById("mobileMenuButtonClose")
+          .classList.toggle("hamburger-btn-close");
+        document
+          .getElementById("mobileMenuButtonOpen")
+          .classList.toggle("hamburger-btn-close");
+      };
+      // Hide element when click outside nav
+      var theElementContainer = document.getElementsByTagName("nav")[0];
+      document.addEventListener("click", function (event) {
+        if (!theElementContainer.contains(event.target)) {
+          document
+            .getElementById("sideMenuHideOnMobile")
+            .classList.add("hamburger-btn-close-side-menu");
+          // document
+          //   .getElementById("sideMenuHideOnMobile")
+          //   .classList.remove("mt-12");
+          // document
+          //   .getElementById("sideMenuHideOnMobile")
+          //   .classList.remove("shadow");
+          document
+            .getElementById("mobileMenuButtonOpen")
+            .classList.remove("hamburger-btn-close");
+          document
+            .getElementById("mobileMenuButtonClose")
+            .classList.add("hamburger-btn-close");
+        }
+      });
+    </script>
   {{ end }}
 </header>
